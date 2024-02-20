@@ -1,0 +1,61 @@
+= Roadmap
+
+== Functional Features
+
+1. **Unsubscribe Command**: Allow users to unsubscribe from MQTT topics.
+
+2. **TLS Support**: Enable TLS/SSL encryption for MQTT connections.
+
+3. **Authentication**: Implement authentication mechanisms (e.g., username/password, client certificates) for connecting to MQTT brokers.
+
+4. **Clean Session**: Allow users to specify whether to start a clean session or resume an existing session when connecting to the broker.
+
+5. **Retained Messages**: Support retained messages and provide an option to publish messages as retained.
+
+6. **Last Will and Testament (LWT)**: Allow users to specify a last will and testament message to be sent by the broker if the client disconnects unexpectedly.
+
+7. **Quality of Service (QoS)**: Implement support for different QoS levels when publishing and subscribing to messages.
+
+8. **Connection Status**: Display the connection status (connected/disconnected) in the CLI.
+
+More...
+
+
+== Non Functional Features
+
+Error Handling: Enhance error handling throughout the application. Provide informative error messages when connections fail, messages cannot be published, or subscriptions encounter issues.
+
+1. Quality of Life Features:
+
+Implement tab completion for commands and flag values to improve the user experience.
+Allow users to configure default connection settings in a configuration file, so they don't need to specify them repeatedly on the command line.
+Add an option to save and load previous commands for easier reuse.
+Interactive Mode: Implement an interactive mode where users can navigate through different functionalities (e.g., connecting, publishing, subscribing) using a menu-based interface.
+
+2. Subscription Management:
+
+Add functionality to manage subscriptions dynamically. Allow users to subscribe and unsubscribe from topics while the application is running.
+Implement wildcard subscription support for subscribing to multiple topics simultaneously.
+Message Persistence: Integrate message persistence features such as storing published messages in a database or file system, allowing users to retrieve and query them later.
+
+
+3. Monitoring and Logging:
+
+Provide real-time monitoring of MQTT traffic, including message rates, connection status, and error logs.
+Allow users to enable debug logging to troubleshoot connectivity or messaging issues.
+
+4. Custom Commands:
+
+Allow users to define custom commands or scripts to automate repetitive tasks or perform complex actions.
+
+5. Cross-Platform Support: Ensure the CLI tool works seamlessly across different operating systems (Windows, macOS, Linux) without any compatibility issues.
+
+6. Documentation and Help:
+
+Provide comprehensive documentation, including usage examples, command references, and troubleshooting guides.
+Implement a built-in help command to display usage instructions and available options for each command.
+
+7. Unit Tests and CI/CD:
+
+Write unit tests to validate the functionality of individual components.
+Set up continuous integration and deployment pipelines to automate testing, building, and releasing new versions of the CLI tool.

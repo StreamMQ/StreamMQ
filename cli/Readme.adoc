@@ -1,0 +1,92 @@
+= PeerMQ CLI
+
+A CLI tool for interacting with MQTT brokers.
+
+== Overview
+
+PeerMQ CLI is a command-line interface (CLI) tool designed to facilitate interaction with MQTT (Message Queuing Telemetry Transport) brokers. It provides a convenient way to connect to MQTT brokers, publish messages to topics, and subscribe to topics to receive messages.
+
+== Features
+
+- Connect to MQTT brokers using specified connection parameters.
+- Publish messages to MQTT topics with customizable message content.
+- Subscribe to MQTT topics to receive messages in real-time.
+
+== Installation
+
+To install PeerMQ CLI, follow these steps:
+
+1. Clone the repository:
+
+```
+git clone <repository-url>
+```
+
+2. Navigate to the project directory:
+
+```
+cd PeerMQ-cli
+```
+
+3. Build the project:
+
+```
+go build -o pmq main.go
+```
+
+4. Run the executable:
+
+```
+./pmq [command]
+```
+
+== Usage
+
+PeerMQ CLI supports the following commands:
+
+- `connect`: Establish a connection to an MQTT broker.
+- `publish`: Publish a message to an MQTT topic.
+- `subscribe`: Subscribe to messages on an MQTT topic.
+
+Each command supports various flags to customize its behavior. Use the `--help` flag with any command to view detailed usage instructions.
+
+== Examples
+
+Connect to an MQTT broker:
+
+```
+./pmq connect --broker tcp://localhost:1883 --clientID my-client
+```
+
+Publish a message to an MQTT topic:
+
+```
+./pmq publish --broker tcp://localhost:1883 --clientID my-client --topic my/topic --message "Hello, MQTT!"
+```
+
+Subscribe to messages on an MQTT topic:
+
+```
+./pmq subscribe --broker tcp://localhost:1883 --clientID my-client --topic my/topic
+```
+
+== Contributing
+
+If you'd like to contribute to PeerMQ CLI, please fork the repository and submit a pull request. We welcome contributions of all kinds, including bug fixes, feature enhancements, and documentation improvements.
+
+== License
+
+PeerMQ CLI is licensed under the Apache License, Version 2.0. See the LICENSE file for details.
+
+== Support
+
+If you encounter any issues or have any questions, please feel free to open an issue on the GitHub repository. We'll do our best to assist you.
+
+== Acknowledgements
+
+PeerMQ CLI is built using the following open-source libraries:
+
+- Eclipse Paho MQTT Client (https://github.com/eclipse/paho.mqtt.golang)
+- Cobra (https://github.com/spf13/cobra)
+
+We extend our gratitude to the authors and maintainers of these libraries for their valuable contributions.

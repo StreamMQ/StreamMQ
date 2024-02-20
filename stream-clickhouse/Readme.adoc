@@ -1,0 +1,56 @@
+= Stream MQTT to ClickHouse
+
+== Overview
+
+This project stream data from an MQTT broker to a ClickHouse database using Go.
+
+== Prerequisites
+
+* Go installed on your system
+* ClickHouse database installed and running
+* MQTT broker available
+
+== Installation
+
+1. Clone the repository:
+
+[source,sh]
+----
+$ git clone <repository_url>
+$ cd mqtt-to-clickhouse
+----
+
+2. Build the project:
+
+[source,sh]
+----
+$ go build
+----
+
+3. Run the executable:
+
+[source,sh]
+----
+$ ./mqtt-to-clickhouse
+----
+
+== Configuration
+
+Ensure that the following configuration variables in the `main.go` file are set according to your environment:
+
+* `mqttBroker`: MQTT broker address
+* `mqttTopic`: MQTT topic to subscribe to
+* `clickHouseEndpoint`: ClickHouse database endpoint
+* `clickHouseTable`: ClickHouse table to insert data into
+
+== Usage
+
+Once the project is running, it will connect to the MQTT broker, subscribe to the specified topic, and insert incoming messages into the ClickHouse database.
+
+== Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request on GitHub.
+
+== License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
