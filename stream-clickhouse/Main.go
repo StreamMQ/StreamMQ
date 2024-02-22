@@ -4,7 +4,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/eclipse/paho.mqtt.golang"
+	"github.com/StreamMQ/StreamMQ/stream-clickhouse/services"
+	mqtt "github.com/eclipse/paho.mqtt.golang"
 )
 
 var (
@@ -13,13 +14,13 @@ var (
 )
 
 func main() {
-    log.Printf("Starting Mqtt To Clickhouse Streaming...")
+	log.Printf("Starting Mqtt To Clickhouse Streaming...")
 
 	// Create a new MQTT client options object
 	opts := mqtt.NewClientOptions().AddBroker(mqttBroker).SetClientID("mqtt-to-clickhouse")
 
 	// Set the callback function for receiving messages
-	opts.SetDefaultPublishHandler(onMessageReceived)
+	opts.SetDefaultPublishHandler(services.OnMessageReceived)
 
 	// Create a new MQTT client instance
 	client := mqtt.NewClient(opts)
